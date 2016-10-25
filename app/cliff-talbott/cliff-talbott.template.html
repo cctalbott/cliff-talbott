@@ -1,0 +1,11 @@
+<p>Hello {{$ctrl.name}}.</p>
+<ul>
+  <li ng-repeat="interview in $ctrl.interviews">
+    <h3>{{interview.title}}</h3>
+    <p>{{interview.description}}</p>
+  </li>
+</ul>
+<audio controls preload="none">
+  <source src="{{$ctrl.activeInterview.source}}" />
+  <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
