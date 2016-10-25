@@ -1,8 +1,7 @@
-<p>Hello {{$ctrl.name}}.</p>
-<ul>
+<ul class="interviews">
   <li ng-repeat="interview in $ctrl.interviews">
-    <h3>{{interview.title}}</h3>
-    <p>{{interview.description}}</p>
+    <h3><a href="#/interviews/{{interview.id}}">{{interview.title}}</a></h3>
+    <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
   </li>
 </ul>
 <audio controls preload="none">

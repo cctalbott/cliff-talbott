@@ -15,21 +15,18 @@ app.config(function($sceDelegateProvider) {
 app.
   component('cliffTalbott', {
     templateUrl: 'cliff-talbott/cliff-talbott.template.html',
-    controller: function CliffTalbottController() {
+    controller: function CliffTalbottController($http) {
+      var self = this;
+      
       // So html5 audio/video sources work
-      this.trusted = function(url) {
+      self.trusted = function(url) {
         return $sce.trustAsResourceUrl(url);
       };
       
       // data
-      this.name = "Cliff Talbott";
-      this.interviews = [
-        {
-          title: 'Interview 1',
-          description: 'Early life summary',
-          source: 'https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/track_01_02.m4a'
-        }
-      ];
-      this.activeInterview = this.interviews[0];
+      $http.get("interviews/interviews.json").then(function(response) {
+        self.interviews = response.data
+        self.activeInterview = self.interviews[0];
+      });
     }
   });
