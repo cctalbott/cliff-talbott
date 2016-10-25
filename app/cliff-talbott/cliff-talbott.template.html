@@ -1,10 +1,23 @@
-<ul class="interviews">
-  <li ng-repeat="interview in $ctrl.interviews">
-    <h3><a href="#/interviews/{{interview.id}}">{{interview.title}}</a></h3>
-    <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
-  </li>
-</ul>
+<section id="audio_player">
+  <div class="player-track-info">
+    <h3 class="player-title">{{$ctrl.activeInterview.title}}</h3>
+    <p class="player-description">{{$ctrl.activeInterview.description}}</p>
+  </div>
+  <div class="player-interface">
+    <div class="player-controls">
+      <div class="play-pause-button play-button"></div>
+    </div>
+  </div>
+</section>
+
 <audio controls preload="none">
   <source src="{{$ctrl.activeInterview.source}}" />
   <p>Your browser does not support the <code>audio</code> element.</p>
 </audio>
+
+<ul class="interviews-list">
+  <li ng-repeat="interview in $ctrl.interviews">
+    <h4><a href="#/interviews/{{interview.id}}">{{interview.title}}</a></h4>
+    <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
+  </li>
+</ul>
