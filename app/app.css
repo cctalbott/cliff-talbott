@@ -18,37 +18,19 @@ ul.interviews-list a {
   color: #454545;
 }
 
-audio {
-  display: none;
-}
-#audio_player {
-  background-color: #ffd700;
-}
 .player-track-info {
   padding: 10px;
   background-color: #ffe200;
 }
-.player-track-info h3, .player-track-info p {
-  line-height: 1em;
-  font-size: 0.85em;
-  margin: 0;
-  color: #454545;
-}
-.player-track-info h3 {
-  margin-bottom: 0.3em;
-}
-.player-controls {
-  padding: 10px;
-}
-.play-pause-button .play-button {
-  width: 50px;
-  height: 50px;
-  background-image: url("images/player-controls/play-btn.png");
-  cursor: pointer;
-}
-.play-pause-button .play-button:hover {
-  background-image: url("images/player-controls/play-btn-hover.png");
-}
+  .player-track-info h3, .player-track-info p {
+    line-height: 1em;
+    font-size: 0.85em;
+    margin: 0;
+    color: #454545;
+  }
+  .player-track-info h3 {
+    margin-bottom: 0.3em;
+  }
 
 /* videogular */
 .videogular-container.audio {

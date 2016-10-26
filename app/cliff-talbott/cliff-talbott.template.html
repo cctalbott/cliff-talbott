@@ -1,23 +1,15 @@
-<!--<section id="audio_player">
-  <div class="player-track-info">
-    <h3 class="player-title">{{$ctrl.activeInterview.title}}</h3>
-    <p class="player-description">{{$ctrl.activeInterview.description}}</p>
+<div class="player-track-info">
+  <h3 class="player-title">{{$ctrl.activeInterview.title}}</h3>
+  <p class="player-description">{{$ctrl.activeInterview.description}}</p>
+</div>
+<div class="player-interface">
+  <div class="player-controls">
+    <div class="play-pause-button play-button"></div>
   </div>
-  <div class="player-interface">
-    <div class="player-controls">
-      <div class="play-pause-button play-button"></div>
-    </div>
-  </div>
-</section>
-
-<audio controls preload="none">
-  <source src="{{//$ctrl.activeInterview.source}}" />
-  <p>Your browser does not support the <code>audio</code> element.</p>
-</audio>-->
-
+</div>
 <div class="videogular-container">
-  <videogular vg-theme="controller.config.theme.url" class="videogular-container audio">
-    <vg-media vg-src="controller.config.sources" vg-type="audio"></vg-media>
+  <videogular vg-theme="$ctrl.config.theme.url" class="videogular-container audio">
+    <vg-media vg-src="$ctrl.config.sources" vg-type="audio"></vg-media>
     <vg-controls>
       <vg-play-pause-button></vg-play-pause-button>
       <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
@@ -32,9 +24,9 @@
   </videogular>
 </div>
 
-<!--<ul class="interviews-list">
+<ul class="interviews-list">
   <li ng-repeat="interview in $ctrl.interviews">
     <h4><a href="#/interviews/{{interview.id}}">{{interview.title}}</a></h4>
     <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
   </li>
-</ul>-->
+</ul>
