@@ -1,4 +1,4 @@
-<section id="audio_player">
+<!--<section id="audio_player">
   <div class="player-track-info">
     <h3 class="player-title">{{$ctrl.activeInterview.title}}</h3>
     <p class="player-description">{{$ctrl.activeInterview.description}}</p>
@@ -11,13 +11,30 @@
 </section>
 
 <audio controls preload="none">
-  <source src="{{$ctrl.activeInterview.source}}" />
+  <source src="{{//$ctrl.activeInterview.source}}" />
   <p>Your browser does not support the <code>audio</code> element.</p>
-</audio>
+</audio>-->
 
-<ul class="interviews-list">
+<div class="videogular-container">
+  <videogular vg-theme="controller.config.theme.url" class="videogular-container audio">
+    <vg-media vg-src="controller.config.sources" vg-type="audio"></vg-media>
+    <vg-controls>
+      <vg-play-pause-button></vg-play-pause-button>
+      <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      </vg-scrub-bar>
+      <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+      <vg-volume>
+        <vg-mute-button></vg-mute-button>
+      </vg-volume>
+    </vg-controls>
+  </videogular>
+</div>
+
+<!--<ul class="interviews-list">
   <li ng-repeat="interview in $ctrl.interviews">
     <h4><a href="#/interviews/{{interview.id}}">{{interview.title}}</a></h4>
     <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
   </li>
-</ul>
+</ul>-->

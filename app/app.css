@@ -49,3 +49,9 @@ audio {
 .play-pause-button .play-button:hover {
   background-image: url("images/player-controls/play-btn-hover.png");
 }
+
+/* videogular */
+.videogular-container.audio {
+  height: 50px;
+}
+

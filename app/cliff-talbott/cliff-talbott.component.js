@@ -1,6 +1,12 @@
 'use strict';
 
-var app = angular.module('cliffTalbott');
+var app = angular.module('cliffTalbott',
+    [
+      "ngSanitize",
+      "com.2fdevs.videogular",
+      "com.2fdevs.videogular.plugins.controls"
+    ]
+  );
 
 // So html5 audio/video sources work
 app.config(function($sceDelegateProvider) {
@@ -11,6 +17,7 @@ app.config(function($sceDelegateProvider) {
     'https://s3.us-east-2.amazonaws.com/cliff-talbott/**']);
 });
 
+/*
 // Register `cliffTalbott` component, along with its associated controller and template
 app.
   component('cliffTalbott', {
@@ -30,3 +37,35 @@ app.
       });
     }
   });
+*/  
+app.
+  component('cliffTalbott', {
+    templateUrl: 'cliff-talbott/cliff-talbott.template.html',
+    controller: function($sce) {
+      this.config = {
+        sources: [
+          {
+            src: $sce.trustAsResourceUrl("https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0102.mp3"), 
+            type: "audio/mpeg"
+          }
+        ],
+        theme: {url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"}
+      };
+    },
+    controllerAs: 'controller'
+  });
+
+/*app
+  .controller('HomeCtrl',
+    ["$sce", function($sce) {
+      this.config = {
+        sources: [
+          {
+            src: $sce.trustAsResourceUrl("https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0102.mp3"), 
+            type: "audio/mpeg"
+          }
+        ],
+        theme: {url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"}
+      };
+    }]
+  );*/
