@@ -1,7 +1,8 @@
 /* app css stylesheet */
 ul.interviews-list {
   list-style: none outside none;
-  padding: 0px;
+  padding: 0;
+  margin: 0;
 }
 ul.interviews-list li {
   border-bottom: 1px #ececec solid;

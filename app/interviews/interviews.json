@@ -1,20 +1,35 @@
 [
   {
-    "id": "0102",
+    "id": "0",
     "title": "Early Life Summary",
     "description": "Cliff talks about growing up in South Dakota.",
-    "source": "https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0102.mp3"
+    "sources": [
+      {
+        "src": "https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0102.mp3",
+        "type": "audio/mpeg"
+      }
+    ]
   },
   {
-    "id": "0103",
+    "id": "1",
     "title": "War",
     "description": "Cliff talks about his time in World War II.",
-    "source": "https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0103.mp3"
+    "sources": [
+      {
+        "src": "https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0103.mp3",
+        "type": "audio/mpeg"
+      }
+    ]
   },
   {
-    "id": "0104",
+    "id": "2",
     "title": "Times Are Changing",
     "description": "Cliff talks about accelerating change.",
-    "source": "https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0104.mp3"
+    "sources": [
+      {
+        "src": "https://s3.us-east-2.amazonaws.com/cliff-talbott/audio/Cliff-Talbott-Interview-0104.mp3",
+        "type": "audio/mpeg"
+      }
+    ]
   }
 ]

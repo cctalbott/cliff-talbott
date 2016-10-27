@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="videogular-container">
-  <videogular vg-theme="$ctrl.config.theme.url" class="videogular-container audio">
+  <videogular vg-player-ready="$ctrl.onPlayerReady($API)" vg-theme="$ctrl.config.theme.url" class="videogular-container audio">
     <vg-media vg-src="$ctrl.config.sources" vg-type="audio"></vg-media>
     <vg-controls>
       <vg-play-pause-button></vg-play-pause-button>
@@ -26,7 +26,7 @@
 
 <ul class="interviews-list">
   <li ng-repeat="interview in $ctrl.interviews">
-    <h4><a href="#/interviews/{{interview.id}}">{{interview.title}}</a></h4>
+    <h4><a ng-click="$ctrl.setAudio(interview.id)">{{interview.title}}</a></h4>
     <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
   </li>
 </ul>
