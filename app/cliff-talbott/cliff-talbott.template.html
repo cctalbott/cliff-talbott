@@ -1,32 +1,40 @@
-<div class="player-track-info">
-  <h3 class="player-title">{{$ctrl.activeInterview.title}}</h3>
-  <p class="player-description">{{$ctrl.activeInterview.description}}</p>
-</div>
-<div class="player-interface">
-  <div class="player-controls">
-    <div class="play-pause-button play-button"></div>
+<div id="audio_player">
+  <div class="player-track-info">
+    <h1 class="player-title">{{ $ctrl.activeInterview.title }}</h1>
+    <p class="player-description">{{ $ctrl.activeInterview.description }}</p>
+  </div>
+  <div class="player-interface">
+    <div class="player-controls">
+      <div class="play-pause-button play-button"></div>
+    </div>
+  </div>
+  <div class="videogular-container">
+    <videogular vg-player-ready="$ctrl.onPlayerReady($API)" vg-theme="$ctrl.config.theme.url" class="videogular-container audio">
+      <vg-media vg-src="$ctrl.config.sources" vg-type="audio"></vg-media>
+      <vg-controls>
+        <vg-play-pause-button></vg-play-pause-button>
+        <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+        <vg-scrub-bar>
+          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        </vg-scrub-bar>
+        <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+        <vg-volume>
+          <vg-mute-button></vg-mute-button>
+        </vg-volume>
+      </vg-controls>
+    </videogular>
   </div>
 </div>
-<div class="videogular-container">
-  <videogular vg-player-ready="$ctrl.onPlayerReady($API)" vg-theme="$ctrl.config.theme.url" class="videogular-container audio">
-    <vg-media vg-src="$ctrl.config.sources" vg-type="audio"></vg-media>
-    <vg-controls>
-      <vg-play-pause-button></vg-play-pause-button>
-      <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
-      <vg-scrub-bar>
-        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-      </vg-scrub-bar>
-      <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
-      <vg-volume>
-        <vg-mute-button></vg-mute-button>
-      </vg-volume>
-    </vg-controls>
-  </videogular>
+<div id="article" class="clearfix">
+  <nav class="interviews">
+    <ol class="interviews-list">
+      <li ng-repeat="interview in $ctrl.interviews">
+        <a ng-click="$ctrl.setAudio(interview.id)">
+          <h1>{{ interview.title }}</h1>
+          <p>{{ interview.description }}</p>
+        </a>
+      </li>
+    </ol>
+  </nav>
+  <article ng-include="$ctrl.article"></article>
 </div>
-
-<ul class="interviews-list">
-  <li ng-repeat="interview in $ctrl.interviews">
-    <h4><a ng-click="$ctrl.setAudio(interview.id)">{{interview.title}}</a></h4>
-    <p><a href="#/interviews/{{interview.id}}">{{interview.description}}</a></p>
-  </li>
-</ul>

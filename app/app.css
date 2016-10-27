@@ -1,40 +1,106 @@
 /* app css stylesheet */
-ul.interviews-list {
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+/* Interviews List */
+nav.interviews {
+  width: 320px;
+  position: fixed;
+  top: 100px;
+  z-index: 99;
+  background-color: #fff;
+}
+.interviews-list {
   list-style: none outside none;
   padding: 0;
   margin: 0;
+  border-right: 1px solid #ececec;
 }
-ul.interviews-list li {
-  border-bottom: 1px #ececec solid;
+.interviews-list li {
+  border-bottom: 1px solid #ececec;
   padding: 10px;
+  cursor: pointer;
 }
-ul.interviews-list li:hover {
-  background-color: #f9f9f9;
-}
-.interviews-list h4, .interviews-list p {
-  margin: 0;
-}
-ul.interviews-list a {
-  text-decoration: none;
-  color: #454545;
-}
+  .interviews-list li:hover {
+    background-color: #f9f9f9;
+  }
+  .interviews-list a h1, .interviews-list a p {
+    margin: 0;
+  }
+  .interviews-list a h1 {
+    font-size: 1em;
+  }
+  .interviews-list a h1 p {
+    font-size: 0.85em;
+  }
+  .interviews-list a {
+    text-decoration: none;
+    color: #454545;
+  }
 
+/* Article */
+#article {
+  margin-top: 101px;
+}
+article {
+  width: 990px;
+  margin-left: 340px;
+  margin-top: 20px;
+}
+  article .copy {
+    max-width: 600px;
+    margin: 2em 0;
+  }
+  article .copy p {
+    line-height: 1.8em;
+  } 
+.collage .image-holder {
+  float: left;
+  max-width: 320px;
+  overflow: hidden;
+  margin-right: 5px;
+  border-top: 5px solid #ffd700;
+} 
+  .collage .image-holder p {
+    padding: 5px;
+    width: 310px;
+    height: 50px;
+    margin-top: 0;
+    background-color: #333;
+    color: #999;
+    font-size: 0.75em;
+    display: table-cell;
+  }
+    .collage .image-holder p a {
+      color: #ffd700;
+    }
+
+/* Audio Player */
+#audio_player {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
 .player-track-info {
   padding: 10px;
   background-color: #ffe200;
 }
-  .player-track-info h3, .player-track-info p {
+  .player-track-info h1, .player-track-info p {
     line-height: 1em;
     font-size: 0.85em;
     margin: 0;
     color: #454545;
   }
-  .player-track-info h3 {
+  .player-track-info h1 {
     margin-bottom: 0.3em;
   }
 
 /* videogular */
 .videogular-container.audio {
   height: 50px;
+  
 }
 
