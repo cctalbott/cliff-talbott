@@ -1,14 +1,29 @@
-module.exports = function(grunt) {
+'use strict';
 
+module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    jshint: {
+      options: {
+        node: true,
+        globals: {
+          'angular': false
+        }
+      },
+      all: [
+        'Gruntfile.js',
+        './app/app.module.js',
+        './app/cliff-talbott/cliff-talbott.component.js',
+        './app/cliff-talbott/cliff-talbott.module.js'
+      ]
+    },
     ngAnnotate: {
       options: {
         singleQuotes: true
       },
       app: {
-        files {
+        files: {
           './app/min-safe/app.module.js': ['./app/app.module.js'],
           './app/min-safe/cliff-talbott/cliff-talbott.component.js': ['./app/cliff-talbott/cliff-talbott.component.js'],
           './app/min-safe/cliff-talbott/cliff-talbott.module.js': ['./app/cliff-talbott/cliff-talbott.module.js']
@@ -20,7 +35,7 @@ module.exports = function(grunt) {
         src: ['./app/min-safe/app.module.js', './app/min-safe/cliff-talbott/*.js'],
         dest: './app/min/app.min.js'
       }
-    },
+    },    
     uglify: {
       js: {
         src: ['./app/min/app.min.js'],
@@ -28,13 +43,14 @@ module.exports = function(grunt) {
       }
     }
   });
-
+  
   // Load the plugins to provide tasks
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-ng-annotate');
 
   // Default task(s).
-  grunt.registerTask('default', ['ngAnnotate', 'concat', 'uglify']);
-
+  grunt.registerTask('default', ['jshint', 'ngAnnotate', 'concat', 'uglify']);
 };
+

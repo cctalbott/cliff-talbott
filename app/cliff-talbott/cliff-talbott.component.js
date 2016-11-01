@@ -22,7 +22,7 @@ angular.
           sources: self.activeInterview.sources,
           theme: {url: "styles/videogular.css"}
         };
-        self.article = 'cliff-talbott/article.template.html'
+        self.article = 'cliff-talbott/article.template.html';
       });
       
       self.onPlayerReady = function(API) {
@@ -32,7 +32,7 @@ angular.
         self.API.stop();
         self.activeInterview = self.interviews[id];
         self.config.sources = self.activeInterview.sources;
-        self.article = 'cliff-talbott/article.template.html'
+        self.article = 'cliff-talbott/article.template.html';
       };
     }
   });
