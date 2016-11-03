@@ -2,7 +2,7 @@
   "name": "cliff-talbott",
   "description": "A collection of interviews with Cliff Talbott",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/cctalbott/cliff-talbott",
   "license": "MIT",
   "private": true,
   "dependencies": {
